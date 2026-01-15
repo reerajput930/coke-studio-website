@@ -8,65 +8,43 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Caucasian+Albanian&display=swap" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Caucasian+Albanian&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Caucasian+Albanian&family=Noto+Sans+Mono:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 </head>
 <style>
     body{
         padding: 0;
         margin: 0;
     }
-    #top{
-         background-color: #E50000;
-    width: 100vw;
-    height: 68vh;
-    margin: 25px 0px 10px 0px;
-    background-image: url(./Components\ from\ Figma/coke.png);
-    background-size: 85% 92%;
-    background-position: center;
-    background-repeat: no-repeat;
-        display: flex;
-    flex-direction: column;
-    align-items: center;
-    }
-    #toptop ul{
+   
+
+    #topbottom{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-    #toptop li{
-    font-size: 20px;
-    padding: 5px 14px 5px 14px;
-    color: white;
+        margin-top: 3em;
+
     }
-    #toptop{
-    height: 8vh;
-    width: 40vw;
-    background-color: #00000059;
-    /* opacity: 0.5; */
-    border-radius: 29px;
-    margin: 25px 0px 0px 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    #topbottom p{
+        margin: 0px;
+        padding: 0px;
     }
-    #toplower{
-            display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+    #topbottom .mini{
+     font-family: "Source Sans 3", sans-serif;
     }
-    #topleft{
-        width: 35vw;
-        display: flex;
-        justify-content:left;
-        /* align-items: center; */
-        flex-direction: column;
+    #topbottom .large{
+     font-family: "Source Sans 3", sans-serif;
+         font-weight: 800;
+    margin-left: 16px;
     }
-    #topright{
-        width: 60vw;
+    #topbottom img{
+         position: absolute;
+    width: 3vw;
+    bottom: 0px;
     }
 </style>
 <body>
@@ -108,16 +86,37 @@
             </div>
             <div id="toplower">
                 <div id="topleft">
-                    <h1>Cola</h1>
+                    <h1 style="margin-bottom: -.3em;">Cola</h1>
                     <p>Ice-cold, crisp, and effortlessly refreshing, Coke delivers a smooth, fizzy taste that instantly lifts your mood.</p>
-                    <p> Every sip feels light, balanced, and satisfying, making it the perfect refreshment for any moment when you just want to pause, chill, and enjoy the classic taste you love.</p>
-                 <div class="btn" id="topleftbtn">shop Now</div>
+                    <p style="margin-top: 1em;"> Every sip feels light, balanced, and satisfying, making it the perfect refreshment for any moment when you just want to pause, chill, and enjoy the classic taste you love.</p>
+                 <div class="btn" id="topleftbtn">Shop Now </div>
                 </div>
                 <div id="topright">
-
+              <img id="regularcoke" src="./Components from Figma/regular coke.png" alt="loading...">
+              <img id="dietcoke" src="./Components from Figma/diet coke.png" alt="loading...">
                 </div>
             </div>
 
+        </div>
+        <div id="topbottom">
+            <img src="./Components from Figma/Forward.png" alt="">
+            <div class="infoMenu">
+                <p class="mini">INGREDIENTS</p>
+                <p class="large">100% Organic</p>
+
+            </div>
+            <div class="infoMenu">
+                <p class="mini">MATERIAL</p>
+            <p class="large">Food Grade</p></div>
+            <div class="infoMenu">
+                <p class="mini">FLAVOR</p>
+            <p class="large">9 Variation</p></div>
+            <div class="infoMenu">
+                <p class="mini">VOLUME</p>
+            <p class="large">335 ml</p></div>
+            <div class="infoMenu">
+                <p class="mini">DELIVERY</p>
+            <p class="large">Free</p></div>
         </div>
 
         <div id="middle">

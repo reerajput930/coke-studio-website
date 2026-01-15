@@ -1,4 +1,5 @@
-   nav{
+/* nav part */
+nav{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -65,5 +66,112 @@
     }
     .navLower img{
             height: 65px;
-    margin: 26px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    }
+
+
+    /* top body */
+     #top{
+         background-color: #E50000;
+    width: 100vw;
+    height: 68vh;
+    margin: 25px 0px 10px 0px;
+    background-image: url(./Components\ from\ Figma/coke.png);
+    background-size: 85% 92%;
+    background-position: center;
+    background-repeat: no-repeat;
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    #toptop ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+    #toptop li{
+    font-size: 20px;
+    padding: 5px 14px 5px 14px;
+    color: white;
+    }
+    #toptop{
+    height: 7vh;
+    width: 40vw;
+    background-color: #00000059;
+    /* opacity: 0.5; */
+    border-radius: 29px;
+    margin: 25px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    #toplower{
+            display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    }
+    #toplower .btn{
+        background-color: #e5000047;
+    background: E50000;
+    color: white;
+        border-radius: 26px;
+    border: none;
+    padding: 4px 20px 4px 20px;
+    font-size: 20px;
+    font-weight: bold;
+   
+    width: 5em;
+    
+    border: 1px solid white;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 500;
+    margin: 24px 0px 0px 15px;
+    }
+    #topleft{
+        width: 30vw;
+        display: flex;
+        justify-content:left;
+        /* align-items: center; */
+        flex-direction: column;
+    }
+    #topright{
+        width: 60vw;
+            width: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    #topleft h1{
+            color: white;
+    font-size: 11vw;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Source Sans 3", sans-serif;
+    }
+    #topleft p{
+        color: white;
+    margin: 0 0px 0px 20px;
+    padding: 0px;
+      font-family: "Source Sans 3", sans-serif;
+
+    }
+    #topright #regularcoke{
+        width: 16vw;
+            position: absolute;
+    top: 21em;
+    left: 40em;
+    rotate: 7deg;
+    z-index: 2;
+    }
+    #topright #dietcoke{
+            width: 16vw;
+    position: absolute;
+    top: 19em;
+    right: 29em;
+    z-index: 1;
+    rotate: 354deg;
     }
