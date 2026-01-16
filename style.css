@@ -175,3 +175,122 @@ nav{
     z-index: 1;
     rotate: 354deg;
     }
+
+    /* top bottom */
+     #topbottom{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+        margin-top: 3em;
+
+    }
+    #topbottom p{
+        margin: 0px;
+        padding: 0px;
+    }
+    #topbottom .mini{
+     font-family: "Source Sans 3", sans-serif;
+    }
+    #topbottom .large{
+     font-family: "Source Sans 3", sans-serif;
+         font-weight: 800;
+    margin-left: 16px;
+    }
+    #topbottom img{
+         position: absolute;
+    width: 3vw;
+    bottom: 0px;
+    }
+
+    /* middle */
+      #middle{
+        display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 11em;
+    }
+    #middle p{
+        color: black;
+    margin: 0 0px 0px 20px;
+    padding: 0px;
+    font-family: "Source Sans 3", sans-serif;
+    }
+    #middle h2{
+ color: black;
+    font-size: 4vw;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 600;
+    margin: 0px 0px 0px 20px;
+    letter-spacing: -3px;
+    line-height: 62px;
+    }
+   
+ .middletopleft{
+        width: 37vw;
+ }
+.middletop{
+        height: 29vw;
+    rotate: -4deg;
+        position: relative;
+    top: -4em;
+}
+
+.middletopright{
+    position: relative;
+    top: 2em;
+}
+.middleright{
+    width: 25vw;
+}
+#middlebottom{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 1em 0px 0px 0px;;
+}
+   #details{
+        display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+   #details div{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 39px 0px 0px;
+   }
+   #details h2{
+    color: red;
+    font-size: 5em;
+    padding: 0px;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 400;
+    margin: 0px 0px 0px 20px;
+    letter-spacing: -3px;
+    line-height: 62px;
+   }
+   #details p{
+    margin: 0px 0px 0px 0px ;
+    color: black;
+    margin: 0 0px 0px 20px;
+    padding: 0px;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 1.3em;
+   }
+   #middlebottom img{
+    width: 25vw;
+   }
+   .middletopright img{
+    width: 20vw;
+   }
+   #products{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6em;
+    margin-bottom: 10em;
+   }

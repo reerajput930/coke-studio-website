@@ -20,32 +20,62 @@
         padding: 0;
         margin: 0;
     }
-   
+  
 
-    #topbottom{
-    display: flex;
-    justify-content: space-around;
+   #headingtop h2{
+        color: black;
+    font-size: 4vw;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 600;
+    margin: 0px 0px 0px 20px;
+    letter-spacing: -3px;
+    line-height: 62px;
+
+   }
+   #headingtop p{
+        color: black;
+    margin: 0 0px 0px 20px;
+    padding: 0px;
+    font-family: "Source Sans 3", sans-serif;
+   }
+   #headingtop{
+        display: flex;
+    justify-content: center;
     align-items: center;
-        margin-top: 3em;
+    flex-direction: column;
+    width: 46em;
+    text-align: center;
+   }
+   #menuclick ul{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    text-style: none;
+    list-style: none;
+   }
+   #menuclick li{
+    font-size: 20px;
+    padding: 5px 14px 5px 14px;
+    color: black;
+    margin: 0px 2em 0px 2em;
+    font-weight: 800;
+   }
+   #menuclick{
+        margin: 3em 0em 0em 0em;
+   }
+   #productsbottom img{
+    width: 18em;
+   }
+   #productsbottom{
+       width: 73vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
 
-    }
-    #topbottom p{
-        margin: 0px;
-        padding: 0px;
-    }
-    #topbottom .mini{
-     font-family: "Source Sans 3", sans-serif;
-    }
-    #topbottom .large{
-     font-family: "Source Sans 3", sans-serif;
-         font-weight: 800;
-    margin-left: 16px;
-    }
-    #topbottom img{
-         position: absolute;
-    width: 3vw;
-    bottom: 0px;
-    }
+   }
 </style>
 <body>
     <nav>
@@ -120,10 +150,61 @@
         </div>
 
         <div id="middle">
+            <div class="middletopleft">
+                <h2>Our Success Stories And Mission!</h2>
+                <p>We’re proud of what we create at Coca-Cola, with a long legacy of crafting iconic beverages using a secret recipe and time-honored methods that have been handed down from generation to generation of the Coca-Cola family.</p>
+                <p style="margin-top: 1em;" >We’re proud of what we create at Coca-Cola, with a long legacy of crafting iconic beverages.”</p>
+            </div>
+            <div class="middletop">
+                <img src="./Components from Figma/regular coke.png" alt="">
+            </div>
+            <div class="middletopright">
+                <img src="./Components from Figma/graph.png" alt="">
+            </div>
 
+        </div>
+        <div id="middlebottom">
+            <div><img src="./Components from Figma/graph2.png" alt=""></div>
+            <div id="details">
+                <div><h2>56</h2>
+                <p>Countries Sported</p> </div>
+                <div><h2>122+</h2>
+                <p>International Branches</p></div>
+                <div><h2>1M+</h2>
+                <p>Sales Through Out The World</p>
+                
+            </div>
+        </div>
         </div>
 
         <div id="products">
+            <div id="headingtop">
+                <h2>Our Products</h2>
+                <p>Our is focused on producing light products that bring comfort and convenience to everyone's life. 
+Our products are the lights people need to live and thrive. Founded in 1899.</p>
+            </div>
+            <div id="menuclick">
+                <ul>
+                <li style="
+    border: 2px solid red;
+    color: red;
+" >Popular</li>
+                <li>Beers</li>
+                <li>Soda Water</li>
+                <li>Cola's</li>
+                <li>Diet</li>
+                <li>See all</li>
+            </ul>
+            </div>
+            <div id="productsbottom">
+                <img style="position: relative;
+    top: 3.3em;" src="./Components from Figma/order -1.png" alt="">
+                <img src="./Components from Figma/order -2.png" alt="">
+                <img src="./Components from Figma/order -3.png" alt="">
+                <img src="./Components from Figma/order -4.png" alt="">
+                <img src="./Components from Figma/order -5.png" alt="">
+                <img src="./Components from Figma/order-6.png" alt="">
+            </div>
 
         </div>
 
