@@ -13,7 +13,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Caucasian+Albanian&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Caucasian+Albanian&family=Noto+Sans+Mono:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
 </head>
 <style>
     body{
@@ -22,60 +24,6 @@
     }
   
 
-   #headingtop h2{
-        color: black;
-    font-size: 4vw;
-    margin: 0px;
-    padding: 0px;
-    font-family: "Source Sans 3", sans-serif;
-    font-weight: 600;
-    margin: 0px 0px 0px 20px;
-    letter-spacing: -3px;
-    line-height: 62px;
-
-   }
-   #headingtop p{
-        color: black;
-    margin: 0 0px 0px 20px;
-    padding: 0px;
-    font-family: "Source Sans 3", sans-serif;
-   }
-   #headingtop{
-        display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 46em;
-    text-align: center;
-   }
-   #menuclick ul{
-        display: flex;
-    justify-content: center;
-    align-items: center;
-    text-style: none;
-    list-style: none;
-   }
-   #menuclick li{
-    font-size: 20px;
-    padding: 5px 14px 5px 14px;
-    color: black;
-    margin: 0px 2em 0px 2em;
-    font-weight: 800;
-   }
-   #menuclick{
-        margin: 3em 0em 0em 0em;
-   }
-   #productsbottom img{
-    width: 18em;
-   }
-   #productsbottom{
-       width: 73vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-
-   }
 </style>
 <body>
     <nav>
@@ -102,7 +50,7 @@
         </div>
 
     </nav>
-    <body>
+    
         <div id="top">
             <div id="toptop">
                 <ul>
@@ -122,12 +70,19 @@
                  <div class="btn" id="topleftbtn">Shop Now </div>
                 </div>
                 <div id="topright">
-              <img id="regularcoke" src="./Components from Figma/regular coke.png" alt="loading...">
+
+                    <!-- regular coke -->
+                   <div id="coke3d"></div>    
+
+              <!-- <img id="regularcoke" src="./Components from Figma/regular coke.png" alt="loading..."> -->
               <img id="dietcoke" src="./Components from Figma/diet coke.png" alt="loading...">
                 </div>
             </div>
 
         </div>
+
+
+
         <div id="topbottom">
             <img src="./Components from Figma/Forward.png" alt="">
             <div class="infoMenu">
@@ -208,13 +163,22 @@ Our products are the lights people need to live and thrive. Founded in 1899.</p>
 
         </div>
 
+       
+        
+<script type="importmap">
+{
+  "imports": {
+    "three": "./three.js-master/build/three.module.js",
+    "three/addons/": "./three.js-master/examples/jsm/"
+  }
+}
+</script>
+
+        <script type="module" src="./3D-can.js"></script>
+        
     </body>
-    <footer>
+   
 
+ 
 
-    </footer>
-
-
-    
-</body>
 </html>

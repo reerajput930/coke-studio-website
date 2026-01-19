@@ -294,3 +294,80 @@ nav{
     margin-top: 6em;
     margin-bottom: 10em;
    }
+
+   /* last part */
+   
+   #headingtop h2{
+        color: black;
+    font-size: 4vw;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 600;
+    margin: 0px 0px 0px 20px;
+    letter-spacing: -3px;
+    line-height: 62px;
+
+   }
+   #headingtop p{
+        color: black;
+    margin: 0 0px 0px 20px;
+    padding: 0px;
+    font-family: "Source Sans 3", sans-serif;
+   }
+   #headingtop{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 46em;
+    text-align: center;
+   }
+   #menuclick ul{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    text-style: none;
+    list-style: none;
+   }
+   #menuclick li{
+    font-size: 20px;
+    padding: 5px 14px 5px 14px;
+    color: black;
+    margin: 0px 2em 0px 2em;
+    font-weight: 800;
+   }
+   #menuclick{
+        margin: 3em 0em 0em 0em;
+   }
+   #productsbottom img{
+    width: 18em;
+   }
+   #productsbottom{
+       width: 73vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+   }
+
+#coke3d{
+  width: 27em;          /* ✅ give it a real width */
+  height: 27em;
+  /* background: black; */
+  position: relative;
+  left: -15em;
+  top: 7em;
+  transform: rotate(9deg);   /* ✅ use transform, not rotate property */
+z-index: 3;
+}
+
+#coke3d canvas{
+  position: absolute;   /* ✅ makes z-index work */
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  z-index: 3;
+}
