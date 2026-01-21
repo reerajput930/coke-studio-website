@@ -207,7 +207,8 @@ nav{
         display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-top: 11em;
+    margin-top: 1em;
+    padding-top: 3em;
     }
     #middle p{
         color: black;
@@ -229,6 +230,7 @@ nav{
    
  .middletopleft{
         width: 37vw;
+        margin-right: 9em;
  }
 .middletop{
         height: 29vw;
@@ -291,8 +293,8 @@ nav{
     justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
-    margin-top: 6em;
-    margin-bottom: 10em;
+    margin-top: 8em;
+    margin-bottom: 1em;
    }
 
    /* last part */
@@ -353,21 +355,25 @@ nav{
    }
 
 #coke3d{
-  width: 27em;          /* ✅ give it a real width */
-  height: 27em;
-  /* background: black; */
-  position: relative;
-  left: -15em;
-  top: 7em;
-  transform: rotate(9deg);   /* ✅ use transform, not rotate property */
-z-index: 3;
+ 
+    position: fixed;
+    width: 35em;
+    height: 35em;
+    /* overflow: hidden; */
+    top: 18em;
+    rotate: 10deg;
+    left: 29em;
+    will-change: transform;
+    transform: translate(0px, 0px);
+    z-index: 23;
+
 }
 
-#coke3d canvas{
-  position: absolute;   /* ✅ makes z-index work */
+/* #coke3d canvas{
+  position: absolute;   
   inset: 0;
   width: 100% !important;
   height: 100% !important;
   display: block;
   z-index: 3;
-}
+} */

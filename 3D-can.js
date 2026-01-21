@@ -1,28 +1,31 @@
+import * as  THREE from "three"
+import { GLTFLoader } from "three/examples/jsm/Addons.js"
 
-import * as THREE from "./three.js-master/build/three.module.js";
-import { GLTFLoader } from "./three.js-master/examples/jsm/loaders/GLTFLoader.js";
+let model;   // 👈 global reference
+
+// basic - scene , camera , render and appending child -------------------- 
+const scene = new THREE.Scene();
+const renderer = new THREE.WebGLRenderer({ alpha: true }); //did alpha true for transparent canva
+// this is the size of the body (parent in which our 3d modell will be integrated)
+// const camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight, 0.1,1000);
+
+// renderer.setSize(window.innerWidth,window.innerHeight);
+// document.body.appendChild(renderer.domElement);
+renderer.setClearColor(0x000000, 0); // transparent
+
+// using div as canva parent
+const container = document.getElementById("coke3d");
+const w = container.clientWidth;
+const h = container.clientHeight;
+const camera = new THREE.PerspectiveCamera(75,w/h, 0.1,1000);
+renderer.setSize(w, h);
+
+container.appendChild(renderer.domElement);
+
+//-------------------------------------------------------------------------------
 
 
-window.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("coke3d");
-
-  const w = container.clientWidth;
-  const h = container.clientHeight;
-
-  // scence created - space for 3d object --------
-  const scene = new THREE.Scene();
-
-  // camera created - for space and size -----------
-  const camera = new THREE.PerspectiveCamera(45, w / h, 0.01, 1000);
-  camera.position.set(0, 0, 3);
-
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-  renderer.setSize(w, h);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  container.appendChild(renderer.domElement);
-
-
-  // lightening code -----------------------
+//  need color style ----------------------------------------------------
 // brighter base light
 scene.add(new THREE.AmbientLight(0xffffff, 1.5));
 
@@ -46,36 +49,88 @@ const rimLight = new THREE.DirectionalLight(0xffffff, 2.5);
 rimLight.position.set(0, 4, -6);
 scene.add(rimLight);
 
+//-------------------------------------------------------------------
 
-  const loader = new GLTFLoader();
+//camera angle ------------------------------------
+/*
+X → left (-)  | right (+)
+Y → down (-)  | up (+)
+Z → back (+)  | forward (-)
 
-  loader.load(
-  "./3d_coke_can.glb",
-  (gltf) => {
-    const model = gltf.scene;
-    scene.add(model);
+*/
+camera.position.set(0, 0, 1);
+//---------------------------------------------------
 
-    const box = new THREE.Box3().setFromObject(model);
-    const size = box.getSize(new THREE.Vector3()).length();
-    const center = box.getCenter(new THREE.Vector3());
 
-    model.position.sub(center);
+// loader usage for loading 3d models
+const loader = new GLTFLoader()
+loader.load('./3d_coke_can.glb',function(gltf){
+  model = gltf.scene
 
-    camera.near = size / 100;
-    camera.far = size * 100;
-    camera.updateProjectionMatrix();
+//  scale (size)
+model.scale.set(6, 6 ,6);
+//-----------------
 
-    camera.position.set(0, size * 0.1, size * 1.2);
-    camera.lookAt(0, 0, 0);
+// rotation
+//  model.rotation.x += 0.1;
+//  model.rotation.y += 40.01;
+ //---------------
 
-    console.log("✅ GLB loaded");
+//  position
+/*
+X → left (-)  / right (+)
+Y → down (-)  / up (+)
+Z → back (-)  / forward (+)
+*/
+model.position.set(0, -.3, 0); 
+//--------------------------------
 
-    // ✅ THIS is what actually draws it once
-    renderer.render(scene, camera);
-    },
-    undefined,
-    (err) => {
-      console.error("❌ GLB failed to load:", err);
-    }
-  );
+ scene.add(gltf.scene);
+ console.log("working model");
+
+},undefined,function(error){
+    console.error(error);
+    console.error("wronge")
 });
+
+
+
+// needed to render 
+// function animate(){
+
+//     renderer.render(scene,camera);
+// }
+// renderer.setAnimationLoop(animate);
+
+
+function animate() {
+  console.log("1")
+    if (!model) return;
+    
+    
+    // common rotation
+    // model.rotation.x += 0.01;
+    
+    if (currentBlock === 1) {
+      
+    model.scale.set(4, 4, 4);
+    model.rotation.y += 0.01;
+    model.position.set(0, 0, 0);
+  }
+
+  if (currentBlock === 2) {
+    model.scale.set(5, 5, 5);
+    model.rotation.y += 0.012;
+    model.position.set(0, 0, 0);
+  }
+
+  if (currentBlock === 3) {
+    model.scale.set(3, 3, 3);
+    model.rotation.y += 0.015;
+    model.position.set(0, 0, 0);
+  }
+
+  renderer.render(scene, camera);
+}
+
+renderer.setAnimationLoop(animate);

@@ -111,7 +111,7 @@
                 <p style="margin-top: 1em;" >We’re proud of what we create at Coca-Cola, with a long legacy of crafting iconic beverages.”</p>
             </div>
             <div class="middletop">
-                <img src="./Components from Figma/regular coke.png" alt="">
+                <!-- <img src="./Components from Figma/regular coke.png" alt=""> -->
             </div>
             <div class="middletopright">
                 <img src="./Components from Figma/graph.png" alt="">
@@ -163,16 +163,117 @@ Our products are the lights people need to live and thrive. Founded in 1899.</p>
 
         </div>
 
+
+        <!-- js script -->
+ <script>
+      const can = document.getElementById("coke3d");
+      const b2 = document.getElementById("middle");
+      const b3 = document.getElementById("products");
+
+      // Your 3 states (in em + deg) exactly as you gave
+      const S1 = { topEm: 18, leftEm: 29, rot: 6 };
+      const S2 = { topEm: 1, leftEm: 39, rot: 0 };
+      const S3 = { topEm: -20, leftEm: -30, rot: 0 };
+
+      function clamp01(v) {
+        return Math.max(0, Math.min(1, v));
+      }
+      function lerp(a, b, t) {
+        return a + (b - a) * t;
+      }
+
+      // Convert em -> px using the wrapper’s font-size (so it matches your CSS units)
+      function emToPx(em) {
+        const fs = parseFloat(getComputedStyle(can).fontSize) || 16;
+        return em * fs;
+      }
        
+   
+      // progress through a section: 0 at section start, 1 at section end
+      function sectionProgress(section) {
+        const r = section.getBoundingClientRect();
+        const canRect = can.getBoundingClientRect();
+        const start = canRect.bottom; // animation starts only when the section’s top touches the bottom of the viewport
+        const end = -r.height; // when section bottom passes top
+        return clamp01((start - r.top) / (start - end));
+      }
+
+      function applyState(a, b, t) {
+        const topPx = lerp(emToPx(a.topEm), emToPx(b.topEm), t);
+        const leftPx = lerp(emToPx(a.leftEm), emToPx(b.leftEm), t);
+        const rotDeg = lerp(a.rot, b.rot, t);
+
+        // Because top/left are already set in CSS (state1), we move by transform offsets:
+        const baseTopPx = emToPx(S1.topEm);
+        const baseLeftPx = emToPx(S1.leftEm);
+
+        const dx = leftPx - baseLeftPx;
+        const dy = topPx - baseTopPx;
+
+        can.style.transform = `translate(${dx}px, ${dy}px)`;
+        can.style.rotate = `${rotDeg}deg`;
+      }
+
+      let ticking = false;
+      function tick() {
+        ticking = false;
+
+        const t2 = sectionProgress(b2);
+        const t3 = sectionProgress(b3);
+
+        // Piecewise:
+        // - before block2: S1
+        // - through block2: S1 -> S2
+        // - after block2 but before block3: S2
+        // - through block3: S2 -> S3
+        // - after block3: S3
+        if (t2 === 0 && t3 === 0) {
+          applyState(S1, S1, 0);
+        } else if (t2 > 0 && t2 < 1 && t3 === 0) {
+          applyState(S1, S2, t2);
+        } else if (t2 === 1 && t3 === 0) {
+          applyState(S2, S2, 0);
+        } else if (t3 > 0 && t3 < 1) {
+          applyState(S2, S3, t3);
+        } else if (t3 === 1) {
+          applyState(S3, S3, 0);
+        }
+      }
+
+      function onScroll() {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(tick);
+        }
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", () => requestAnimationFrame(tick));
+      tick(); // initial
+
+      //   three.js
+      let currentBlock = 1;
+      
+      
+      const observer = new IntersectionObserver(
+          (entries) => {
+              entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                      if (entry.target.id === "top") currentBlock = 1;
+                      if (entry.target.id === "middle") currentBlock = 2;
+                      if (entry.target.id === "products") currentBlock = 3;
+                    }
+                });
+            },
+            { threshold: 0.6 },
+        );
         
-<script type="importmap">
-{
-  "imports": {
-    "three": "./three.js-master/build/three.module.js",
-    "three/addons/": "./three.js-master/examples/jsm/"
-  }
-}
-</script>
+      ["top", "middle", "products"].forEach((id) => {
+          observer.observe(document.getElementById(id));
+      });
+      </script>
+       
+=
 
         <script type="module" src="./3D-can.js"></script>
         
